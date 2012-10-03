@@ -63,12 +63,14 @@ def first(iterable, pred=None):
     16
 
     """
-    for el in iterable:
-        if pred:
+    if not pred:
+        for el in iterable:
+            if el:
+                return el
+    else:
+        for el in iterable:
             rv = pred(el)
             if rv:
                 return rv
-        elif el:
-            return el
-    else:
-        return None
+
+    return None
