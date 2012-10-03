@@ -6,11 +6,19 @@ first
 
 first is the function you always missed in itertools.
 
-In the simples case, it returns the first true element from an iterable:
+In the simplest case, it returns the first true element from an iterable:
 
 >>> from first import first
 >>> first([0, False, None, [], (), 42])
 42
+
+Or None if there is none:
+
+>>> from first import first
+>>> first([]) is None
+True
+>>> first([0, False, None, [], ()]) is None
+True
 
 It also supports the passing of a predicate whose result will be returned iff
 the result is true:
