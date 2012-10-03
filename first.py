@@ -41,7 +41,7 @@ __copyright__ = 'Copyright 2012 Hynek Schlawack'
 
 def first(iterable, pred=None):
     """
-    Return first element of `iterable` that evaluates truish, else return None.
+    Return first element of `iterable` that evaluates true, else return None.
 
     >>> first([0, False, None, [], (), 42])
     42
@@ -57,7 +57,7 @@ def first(iterable, pred=None):
     True
 
     If `pred` is specified, the result of `pred` is returned if the result is
-    truish.
+    true.
 
     >>> first([1, 1, 3, 4, 5], lambda x: (x ** 2) if (x % 2) == 0 else False)
     16
