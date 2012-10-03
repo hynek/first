@@ -4,7 +4,7 @@
 first
 =====
 
-first is the function you always missed in itertools.
+first is the function you always missed in Python.
 
 In the simplest case, it returns the first true element from an iterable:
 

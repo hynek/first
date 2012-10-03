@@ -1,5 +1,5 @@
-first: The function you always missed in itertools
-==================================================
+first: The function you always missed in Python
+===============================================
 
 *first* is a MIT licensed Python package with a simple function that returns
 the first true value from an iterable, or ``None`` if there is none.  If you need
@@ -72,9 +72,9 @@ Background
 
 The idea for *first* goes back to a discussion I had with `Łukasz Langa`_ about
 how the ``re`` example above is painful in Python.  We figured such a function
-is missing from `itertools`_, however it’s rather unlikely we’d get it in and
-even if, it wouldn’t get in before 3.4 anyway, which is years away as of yours
-truly is writing this.
+is missing Python, however it’s rather unlikely we’d get it in and even if, it
+wouldn’t get in before 3.4 anyway, which is years away as of yours truly is
+writing this.
 
 So I decided to release it as a package for now.  If it proves popular enough,
 it may even make it into Python’s stdlib in the end.
@@ -82,4 +82,3 @@ it may even make it into Python’s stdlib in the end.
 
 .. _`Python 3`: http://getpython3.com/
 .. _`Łukasz Langa`: https://github.com/ambv
-.. _`itertools`: http://docs.python.org/dev/library/itertools.html
