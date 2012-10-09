@@ -3,10 +3,10 @@ first: The function you always missed in Python
 
 *first* is a MIT licensed Python package with a simple function that returns
 the first true value from an iterable, or ``None`` if there is none.  If you need
-more power, you can also supply a predicate whose result will be returned if
+more power, you can also supply a predicate whose result will be returned `iff`_
 true.
 
-   I'm using the term “true” consistently with Python docs for ``any()`` and
+   I’m using the term “true” consistently with Python docs for ``any()`` and
    ``all()`` — it means that the value evaluates to true like: ``True``, ``1``,
    ``"foo"`` or ``[None]``. But **not**: ``None``, ``False`` or ``0``.  In
    JavaScript, they call this “truthy”.
@@ -82,3 +82,5 @@ it may even make it into Python’s stdlib in the end.
 
 .. _`Python 3`: http://getpython3.com/
 .. _`Łukasz Langa`: https://github.com/ambv
+.. _`iff`: http://en.wikipedia.org/wiki/Iff
+
