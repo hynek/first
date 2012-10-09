@@ -33,12 +33,12 @@ However, it’s especially useful for dealing with regular expressions in
    re2 = re.compile('a(.*)')
 
    m = first(regexp.match('abc') for regexp in [re1, re2])
-   if m.re is re1:
+   if not m:
+      print('no match!')
+   elif m.re is re1:
       print('re1', m.group(1))
    elif m.re is re2:
       print('re2', m.group(1))
-   else:
-      print('no match!')
 
 The optional predicate gives you even *more* power. If you want to return the
 square of the first even number from a list, just do the following: ::
