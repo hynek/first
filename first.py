@@ -33,7 +33,7 @@ the result is true:
 """
 
 __title__ = 'first'
-__version__ = '1.0.0'
+__version__ = '1.0.1'
 __author__ = 'Hynek Schlawack'
 __license__ = 'MIT'
 __copyright__ = 'Copyright 2012 Hynek Schlawack'
