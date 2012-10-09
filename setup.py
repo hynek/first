@@ -6,7 +6,7 @@ import first
 setup(
     name='first',
     version=first.__version__,
-    description=first.__doc__.strip(),
+    description='Return the first true value of an iterable.',
     long_description=open('README.rst').read() + open('HISTORY.rst').read(),
     url='http://github.com/hynek/first/',
     license=first.__license__,
