@@ -13,6 +13,7 @@ setup(
     license=first.__license__,
     author=first.__author__,
     author_email='hs@ox.cx',
+    py_modules=['first'],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
