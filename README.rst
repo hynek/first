@@ -3,8 +3,9 @@ first: The function you always missed in Python
 
 *first* is a MIT licensed Python package with a simple function that returns
 the first true value from an iterable, or ``None`` if there is none.  If you
-need more power, you can also supply a key function that is used to judge the
-truth value of the element.
+need more power, you can also supply a ``key`` function that is used to judge
+the truth value of the element or a ``default`` value if ``None`` doesn’t fit
+your use case.
 
    I’m using the term “true” consistently with Python docs for ``any()`` and
    ``all()`` — it means that the value evaluates to true like: ``True``, ``1``,
@@ -15,10 +16,10 @@ truth value of the element.
 Examples
 ========
 
-A simple example first: ::
+A simple example to get started: ::
 
-   >> from first import first
-   >> first([0, None, False, [], (), 42])
+   >>> from first import first
+   >>> first([0, None, False, [], (), 42])
    42
 
 However, it’s especially useful for dealing with regular expressions in
@@ -40,12 +41,19 @@ However, it’s especially useful for dealing with regular expressions in
    elif m.re is re2:
       print('re2', m.group(1))
 
-The optional key function gives you even *more* selection power.  If you
+The optional ``key`` function gives you even *more* selection power.  If you
 want to return the first even number from a list, just do the following::
 
    >>> from first import first
    >>> first([1, 1, 3, 4, 5], key=lambda x: x % 2 == 0)
    4
+
+``default`` on the other hand allows you to specify a value that is returned
+if none of the elements is true: ::
+
+   >>> from first import first
+   >>> first([0, None, False, [], ()], default=42)
+   42
 
 
 Usage
@@ -55,10 +63,11 @@ The package consists of one module consisting of one function::
 
    from first import first
 
-   first(iterable, key=None)
+   first(iterable, default=None, key=None)
 
 This function returns the first element of ``iterable`` that is true if
-``key`` is ``None``.  If there is no true element, ``None`` is returned.
+``key`` is ``None``.  If there is no true element, the value of ``default`` is
+returned, which is ``None`` by default.
 
 If a callable is supplied in ``key``, the result of ``key(element)`` is
 used to judge the truth value of the element, but the element itself is
