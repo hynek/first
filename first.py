@@ -20,12 +20,12 @@ True
 >>> first([0, False, None, [], ()]) is None
 True
 
-It also supports the passing of a predicate whose result will be returned iff
-the result is true:
+It also supports the passing of a key argument to help selecting the first
+match in a more advanced way.
 
 >>> from first import first
->>> first([1, 1, 3, 4, 5], lambda x: (x ** 2) if (x % 2) == 0 else False)
-16
+>>> first([1, 1, 3, 4, 5], lambda x: x % 2 == 0)
+4
 
 :copyright: (c) 2012 by Hynek Schlawack.
 :license: MIT, see LICENSE for more details.
@@ -39,7 +39,7 @@ __license__ = 'MIT'
 __copyright__ = 'Copyright 2012 Hynek Schlawack'
 
 
-def first(iterable, pred=None, default=None):
+def first(iterable, key=None, default=None):
     """
     Return first element of `iterable` that evaluates true, else return None.
 
@@ -56,21 +56,20 @@ def first(iterable, pred=None, default=None):
     >>> first([0, False, None, [], ()]) is None
     True
 
-    If `pred` is specified, the result of `pred` is returned if the result is
+    If `key` is specified, the result of `key` is returned if the result is
     true.
 
-    >>> first([1, 1, 3, 4, 5], lambda x: (x ** 2) if (x % 2) == 0 else False)
-    16
+    >>> first([1, 1, 3, 4, 5], lambda x: x % 2 == 0)
+    4
 
     """
-    if not pred:
+    if key is None:
         for el in iterable:
             if el:
                 return el
     else:
         for el in iterable:
-            rv = pred(el)
-            if rv:
-                return rv
+            if key(el):
+                return el
 
     return default
