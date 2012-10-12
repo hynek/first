@@ -8,7 +8,8 @@ setup(
     version=first.__version__,
     description='Return the first true value of an iterable.',
     long_description=(open('README.rst').read() + '\n\n' +
-                      open('HISTORY.rst').read()),
+                      open('HISTORY.rst').read() + '\n\n' +
+                      open('AUTHORS.rst').read()),
     url='http://github.com/hynek/first/',
     license=first.__license__,
     author=first.__author__,
