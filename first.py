@@ -39,7 +39,7 @@ __license__ = 'MIT'
 __copyright__ = 'Copyright 2012 Hynek Schlawack'
 
 
-def first(iterable, pred=None):
+def first(iterable, pred=None, default=None):
     """
     Return first element of `iterable` that evaluates true, else return None.
 
@@ -73,4 +73,4 @@ def first(iterable, pred=None):
             if rv:
                 return rv
 
-    return None
+    return default
