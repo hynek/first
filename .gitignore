@@ -2,3 +2,5 @@ __pycache__
 build
 dist
 first.egg-info
+.coverage
+.cache
