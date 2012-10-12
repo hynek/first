@@ -44,7 +44,7 @@ The optional key function gives you even *more* selection power.  If you
 want to return the first even number from a list, just do the following::
 
    >>> from first import first
-   >>> first([1, 1, 3, 4, 5], lambda x: x % 2 == 0)
+   >>> first([1, 1, 3, 4, 5], key=lambda x: x % 2 == 0)
    4
 
 

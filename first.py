@@ -24,7 +24,7 @@ It also supports the passing of a key argument to help selecting the first
 match in a more advanced way.
 
 >>> from first import first
->>> first([1, 1, 3, 4, 5], lambda x: x % 2 == 0)
+>>> first([1, 1, 3, 4, 5], key=lambda x: x % 2 == 0)
 4
 
 :copyright: (c) 2012 by Hynek Schlawack.
@@ -47,8 +47,8 @@ def first(iterable, default=None, key=None):
     >>> first([0, False, None, [], (), 42])
     42
 
-    >>> first([0, False, None, [], ()])
-    None
+    >>> first([0, False, None, [], ()]) is None
+    True
 
     >>> first([0, False, None, [], ()], default='ohai')
     'ohai'
