@@ -1,7 +1,5 @@
 test:
-	python -m doctest first.py
-	python -m doctest README.rst
-	python test_first.py
+	py.test --doctest-glob='*.rst' --doctest-modules --ignore=setup.py
 
 cov:
 	py.test --cov first --cov-report=term-missing .
