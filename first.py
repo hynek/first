@@ -39,27 +39,30 @@ __license__ = 'MIT'
 __copyright__ = 'Copyright 2012 Hynek Schlawack'
 
 
-def first(iterable, key=None, default=None):
+def first(iterable, default=None, key=None):
     """
-    Return first element of `iterable` that evaluates true, else return None.
+    Return first element of `iterable` that evaluates true, else return None
+    (or an optional default value).
 
     >>> first([0, False, None, [], (), 42])
     42
+
+    >>> first([0, False, None, [], ()])
+    None
+
+    >>> first([0, False, None, [], ()], default='ohai')
+    'ohai'
 
     >>> import re
     >>> m = first(re.match(regex, 'abc') for regex in ['b.*', 'a(.*)'])
     >>> m.group(1)
     'bc'
 
-    >>> first([]) is None
-    True
-    >>> first([0, False, None, [], ()]) is None
-    True
+    The optional `key` argument specifies a one-argument predicate function
+    like that used for `filter()`.  The `key` argument, if supplied, must be
+    in keyword form.  For example:
 
-    If `key` is specified, the result of `key` is returned if the result is
-    true.
-
-    >>> first([1, 1, 3, 4, 5], lambda x: x % 2 == 0)
+    >>> first([1, 1, 3, 4, 5], key=lambda x: x % 2 == 0)
     4
 
     """
