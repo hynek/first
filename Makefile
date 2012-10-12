@@ -7,4 +7,4 @@ cov:
 pep8:
 	py.test --pep8 .
 
-.PHONY: test cov
+.PHONY: test cov pep8
