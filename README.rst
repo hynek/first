@@ -77,6 +77,33 @@ returned.
 course, it works with the awesome `Python 3`_ everybody should be using.
 
 
+Alternatives
+============
+
+*first* brings nothing to the table that wasn’t possible before. However the
+existing solutions aren’t very idiomatic for such a common and simple problem.
+
+The following constructs are equivalent to ``first(seq)`` and work since Python
+2.6: ::
+
+   next(itertools.ifilter(None, seq), None)
+   next(itertools.ifilter(bool, seq), None)
+   next((x for x in seq if x), None)
+
+None of them is as pretty as I’d like them to be. The ``re`` example from
+above would look like the following: ::
+
+   next(itertools.ifilter(None, (regexp.match('abc') for regexp in [re1, re2])), None)
+   next((regexp.match('abc') for regexp in [re1, re2] if regexp.match('abc')), None)
+
+Note that in the second case you have to call ``regexp.match()`` *twice*.  For
+comparison, one more time the *first*-version: ::
+
+   first(regexp.match('abc') for regexp in [re1, re2])
+
+Idiomatic, clear and readable. Pythonic. :)
+
+
 Background
 ==========
 
