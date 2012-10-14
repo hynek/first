@@ -4,3 +4,4 @@ dist
 first.egg-info
 .coverage
 .cache
+.tox
