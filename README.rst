@@ -1,6 +1,9 @@
 first: The function you always missed in Python
 ===============================================
 
+.. image:: https://secure.travis-ci.org/hynek/first.png
+        :target: https://secure.travis-ci.org/hynek/first
+
 *first* is a MIT licensed Python package with a simple function that returns
 the first true value from an iterable, or ``None`` if there is none.  If you
 need more power, you can also supply a ``key`` function that is used to judge
