@@ -19,14 +19,18 @@ your use case.
 Examples
 ========
 
-A simple example to get started: ::
+A simple example to get started:
+
+.. code-block:: pycon
 
    >>> from first import first
    >>> first([0, None, False, [], (), 42])
    42
 
 However, it’s especially useful for dealing with regular expressions in
-``if/elif/else`` branches: ::
+``if/elif/else`` branches:
+
+.. code-block:: python
 
    import re
 
@@ -45,14 +49,18 @@ However, it’s especially useful for dealing with regular expressions in
       print('re2', m.group(1))
 
 The optional ``key`` function gives you even *more* selection power.  If you
-want to return the first even number from a list, just do the following::
+want to return the first even number from a list, just do the following:
+
+.. code-block:: pycon
 
    >>> from first import first
    >>> first([1, 1, 3, 4, 5], key=lambda x: x % 2 == 0)
    4
 
 ``default`` on the other hand allows you to specify a value that is returned
-if none of the elements is true: ::
+if none of the elements is true:
+
+.. code-block:: pycon
 
    >>> from first import first
    >>> first([0, None, False, [], ()], default=42)
@@ -62,7 +70,9 @@ if none of the elements is true: ::
 Usage
 =====
 
-The package consists of one module consisting of one function::
+The package consists of one module consisting of one function:
+
+.. code-block:: python
 
    from first import first
 
@@ -87,20 +97,26 @@ Alternatives
 existing solutions aren’t very idiomatic for such a common and simple problem.
 
 The following constructs are equivalent to ``first(seq)`` and work since Python
-2.6: ::
+2.6:
+
+.. code-block:: python
 
    next(itertools.ifilter(None, seq), None)
    next(itertools.ifilter(bool, seq), None)
    next((x for x in seq if x), None)
 
 None of them is as pretty as I’d like them to be. The ``re`` example from
-above would look like the following: ::
+above would look like the following:
+
+.. code-block:: python
 
    next(itertools.ifilter(None, (regexp.match('abc') for regexp in [re1, re2])), None)
    next((regexp.match('abc') for regexp in [re1, re2] if regexp.match('abc')), None)
 
 Note that in the second case you have to call ``regexp.match()`` *twice*.  For
-comparison, one more time the *first*-version: ::
+comparison, one more time the *first*-version:
+
+.. code-block:: python
 
    first(regexp.match('abc') for regexp in [re1, re2])
 
