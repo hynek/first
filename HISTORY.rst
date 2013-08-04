@@ -1,10 +1,15 @@
+.. :changelog:
+
 History
 -------
 
-2.1.0 (unrelease)
-+++++++++++++++++
-   - *Backward incompatible*: Drop support for Python older than 2.6.
+2.0.1 (2013-08-04)
+++++++++++++++++++
    - Make installable on systems that don’t support UTF-8 by default.
+   - *Backward incompatible*: Drop support for Python older than 2.6, the previous fix gets too convoluted otherwise.
+     Please don’t use Python < 2.6 anyway.
+     I beg you.
+     N.B. that this is a *pure packaging/QA matter*: the module still works perfectly with ancient Python versions.
 
 
 2.0.0 (2012-10-13)
