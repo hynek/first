@@ -138,9 +138,3 @@ it may even make it into Python’s stdlib in the end.
 
 .. _`Python 3`: http://getpython3.com/
 .. _`Łukasz Langa`: https://github.com/ambv
-
-
-.. image:: https://d2weczhvl823v0.cloudfront.net/hynek/first/trend.png
-   :alt: Bitdeli badge
-   :target: https://bitdeli.com/free
-
