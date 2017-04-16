@@ -4,7 +4,7 @@ import first
 import sys
 
 
-if sys.version_info[0] >= 3:
+if (sys.version_info[0] >= 3):
     openf = open
 else:
     import codecs
