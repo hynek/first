@@ -10,14 +10,18 @@ else:
     import codecs
     openf = codecs.open
 
+def read(fn):
+    with openf(fn, encoding='utf-8') as fp:
+        return fp.read()
+
 
 setup(
     name='first',
     version=first.__version__,
     description='Return the first true value of an iterable.',
-    long_description=(openf('README.rst', encoding='utf-8').read() + '\n\n' +
-                      openf('HISTORY.rst', encoding='utf-8').read() + '\n\n' +
-                      openf('AUTHORS.rst', encoding='utf-8').read()),
+    long_description=(read('README.rst') + '\n\n' +
+                      read('HISTORY.rst') + '\n\n' +
+                      read('AUTHORS.rst')),
     url='http://github.com/hynek/first/',
     license=first.__license__,
     author=first.__author__,
