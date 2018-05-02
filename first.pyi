@@ -4,7 +4,7 @@ _T = TypeVar('_T')
 _S = TypeVar('_S')
 
 @overload
-def first(iterable: Iterable[_T]) -> Union[None, _T]: ...
+def first(iterable: Iterable[_T]) -> Optional[_T]: ...
 
 
 @overload
