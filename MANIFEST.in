@@ -1,1 +1,1 @@
-include README.rst AUTHORS.rst LICENSE HISTORY.rst
+include README.rst AUTHORS.rst LICENSE HISTORY.rst test_first.py tox.ini
