@@ -112,10 +112,16 @@ above would look like the following:
 
    next(itertools.ifilter(None, (regexp.match('abc') for regexp in [re1, re2])), None)
    next((regexp.match('abc') for regexp in [re1, re2] if regexp.match('abc')), None)
+   next((match for match in itertools.imap(
+       operator.methodcaller('match', 'abc'), [re1, re2]) if match), None)
 
-Note that in the second case you have to call ``regexp.match()`` *twice*.  For
-comparison, one more time the *first*-version:
+Note that in the second case you have to call ``regexp.match()`` *twice*. Sure
+third example "fixes" that problem. For comparison, one more time the
+*first*-version:
 
+.. code-block:: python
+
+For comparison, one more time the *first*-version:
 .. code-block:: python
 
    first(regexp.match('abc') for regexp in [re1, re2])
