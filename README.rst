@@ -115,13 +115,11 @@ above would look like the following:
    next((match for match in itertools.imap(
        operator.methodcaller('match', 'abc'), [re1, re2]) if match), None)
 
-Note that in the second case you have to call ``regexp.match()`` *twice*. Sure
-third example "fixes" that problem. For comparison, one more time the
-*first*-version:
-
-.. code-block:: python
+Note that in the second case you have to call ``regexp.match()`` *twice*.  The
+third example "fixes" that problem but also summons Cthulhu.
 
 For comparison, one more time the *first*-version:
+
 .. code-block:: python
 
    first(regexp.match('abc') for regexp in [re1, re2])
