@@ -22,6 +22,7 @@ setup(
     long_description=(read('README.rst') + '\n\n' +
                       read('HISTORY.rst') + '\n\n' +
                       read('AUTHORS.rst')),
+    long_description_content_type="text/x-rst",
     url='http://github.com/hynek/first/',
     license=first.__license__,
     author=first.__author__,

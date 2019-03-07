@@ -1,1 +1,1 @@
-include README.rst AUTHORS.rst LICENSE HISTORY.rst test_first.py tox.ini
+include *.rst LICENSE test_first.py tox.ini Makefile .travis.yml

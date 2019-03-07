@@ -3,7 +3,7 @@
 History
 -------
 
-2.0.2 (2019-03-06)
+2.0.2 (2019-03-07)
 ++++++++++++++++++
 
 - Package tests as part of the dist.
