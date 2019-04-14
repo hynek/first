@@ -56,6 +56,7 @@ class TestFirst(unittest.TestCase):
         d = {1: None, 2: 3.14, 3: 2.72}
 
         assert first(d) == 2
+        assert first(d, key=lambda x: not x) == 1
 
 
 if __name__ == '__main__':
