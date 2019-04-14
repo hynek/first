@@ -68,6 +68,12 @@ def first(iterable, default=None, key=None):
     >>> first([1, 1, 3, 4, 5], key=lambda x: x % 2 == 0)
     4
 
+    When using key with a dictionary iterable, the key applies to the values
+    in the dictionary.
+
+    >>> first({1: None, 2: 3.14, 3: 2.72}, key=lambda x: x is None)
+    1
+
     """
     if isinstance(iterable, dict):
         if key is None:
