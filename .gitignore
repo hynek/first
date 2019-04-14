@@ -6,3 +6,4 @@ first.egg-info
 .coverage
 .cache
 .tox
+venv/

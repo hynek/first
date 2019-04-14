@@ -35,6 +35,24 @@ class TestFirst(unittest.TestCase):
         assert first(l, key=even) == 0
         assert first(l, key=is_meaning_of_life) is None
 
+    def test_dictionary_first(self):
+        d = {
+                1: (),
+                2: 0,
+                3: False,
+                4: 3,
+                5: [],
+                6: None
+        }
+
+        assert first(d) == 4
+        assert first(d, default=42) == 4
+        assert first(d, key=isint) == 2
+        assert first(d, key=isbool) == 3
+        assert first(d, key=odd) == 4
+        assert first(d, key=even) == 2
+        assert first(d, key=is_meaning_of_life) is None
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -1,4 +1,4 @@
-## -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 
 """
 first
@@ -58,6 +58,9 @@ def first(iterable, default=None, key=None):
     >>> m.group(1)
     'bc'
 
+    >>> first({1: 3.14, 2: 2.72, 3: None})
+    3
+
     The optional `key` argument specifies a one-argument predicate function
     like that used for `filter()`.  The `key` argument, if supplied, must be
     in keyword form.  For example:
@@ -66,13 +69,24 @@ def first(iterable, default=None, key=None):
     4
 
     """
-    if key is None:
-        for el in iterable:
-            if el:
-                return el
+    if isinstance(iterable, dict):
+        if key is None:
+            for el, v in iterable.items():
+                if v:
+                    return el
+        else:
+            for el, v in iterable.items():
+                if key(v):
+                    return el
+
     else:
-        for el in iterable:
-            if key(el):
-                return el
+        if key is None:
+            for el in iterable:
+                if el:
+                    return el
+        else:
+            for el in iterable:
+                if key(el):
+                    return el
 
     return default
