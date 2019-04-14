@@ -7,3 +7,4 @@ first.egg-info
 .cache
 .tox
 venv/
+.idea/
