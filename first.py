@@ -58,8 +58,8 @@ def first(iterable, default=None, key=None):
     >>> m.group(1)
     'bc'
 
-    >>> first({1: 3.14, 2: 2.72, 3: None})
-    3
+    >>> first({1: None, 2: 3.14, 3: 2.72})
+    2
 
     The optional `key` argument specifies a one-argument predicate function
     like that used for `filter()`.  The `key` argument, if supplied, must be

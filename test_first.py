@@ -53,6 +53,10 @@ class TestFirst(unittest.TestCase):
         assert first(d, key=even) == 2
         assert first(d, key=is_meaning_of_life) is None
 
+        d = {1: None, 2: 3.14, 3: 2.72}
+
+        assert first(d) == 2
+
 
 if __name__ == '__main__':
     unittest.main()
