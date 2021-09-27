@@ -1,16 +1,23 @@
 first: The function you always missed in Python
 ===============================================
 
-.. image:: https://travis-ci.org/hynek/first.svg?branch=master
-   :target: https://travis-ci.org/hynek/first
-   :alt: CI Status
-
 ``first`` is an MIT-licensed Python package with a simple function that returns the first true value from an iterable, or ``None`` if there is none.
 If you need more power, you can also supply a ``key`` function that is used to judge the truth value of the element or a ``default`` value if ``None`` doesn’t fit your use case.
 
 N.B. I’m using the term “true” consistently with Python docs for ``any()`` and ``all()`` — it means that the value evaluates to true like: ``True``, ``1``, ``"foo"``, or ``[None]``.
 But **not**: ``None``, ``False``, ``[]``, or ``0``.
 In JavaScript, they call this “truthy”.
+
+
+Project Status
+==============
+
+I consider ``first`` **done**.
+It's short, it works.
+If it breaks in a future Python release, I will fix it.
+But other than that, no work on the project is intended.
+
+If you need more functionality, the excellent `boltons package <https://boltons.readthedocs.io/>`_ contains a ``first``-like function as part of its `iterutils module <https://boltons.readthedocs.io/en/latest/iterutils.html#boltons.iterutils.first>`_.
 
 
 Examples
@@ -115,10 +122,6 @@ For comparison, one more time the ``first``-version:
    first(regexp.match('abc') for regexp in [re1, re2])
 
 Idiomatic, clear and readable. Pythonic. :)
-
-----
-
-As of version 0.6.5 from 2015, the excellent `boltons package <https://boltons.readthedocs.io/>`_ contains a ``first``-like function as part of its `iterutils module <https://boltons.readthedocs.io/en/latest/iterutils.html#boltons.iterutils.first>`_.
 
 
 Background

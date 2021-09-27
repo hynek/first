@@ -1,1 +1,1 @@
-include *.rst LICENSE test_first.py tox.ini Makefile .travis.yml
+include *.rst LICENSE test_first.py tox.ini Makefile
