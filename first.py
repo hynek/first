@@ -39,7 +39,7 @@ __license__ = 'MIT'
 __copyright__ = 'Copyright 2012 Hynek Schlawack'
 
 
-def first(iterable, default=None, key=None):
+def first(iterable, default=None, key=bool):
     """
     Return first element of `iterable` that evaluates true, else return None
     (or an optional default value).
@@ -66,13 +66,8 @@ def first(iterable, default=None, key=None):
     4
 
     """
-    if key is None:
-        for el in iterable:
-            if el:
-                return el
-    else:
-        for el in iterable:
-            if key(el):
-                return el
+    for el in iterable:
+        if key(el):
+            return el
 
     return default
