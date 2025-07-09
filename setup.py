@@ -27,7 +27,8 @@ setup(
     license=first.__license__,
     author=first.__author__,
     author_email='hs@ox.cx',
-    py_modules=['first'],
+    packages=['first'],
+    package_data={'first': ['py.typed', '__init__.pyi']},
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
@@ -48,5 +49,6 @@ setup(
         'Programming Language :: Python :: Implementation :: CPython',
         'Programming Language :: Python :: Implementation :: PyPy',
         'Topic :: Software Development :: Libraries :: Python Modules',
+        'Typing :: Typed',
     ],
 )
