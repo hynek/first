@@ -23,7 +23,7 @@ setup(
                       read('HISTORY.rst') + '\n\n' +
                       read('AUTHORS.rst')),
     long_description_content_type="text/x-rst",
-    url='http://github.com/hynek/first/',
+    url='https://github.com/hynek/first/',
     license=first.__license__,
     author=first.__author__,
     author_email='hs@ox.cx',
